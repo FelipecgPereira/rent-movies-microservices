@@ -36,13 +36,14 @@ model Movie {
 
 model Rent {
 
-  id         String   @id @default(uuid())
-  customer   Customer @relation(fields: [customerId], references: [id])
-  customerId String
-  movie      Movie    @relation(fields: [movieId], references: [id])
-  movieId    String
-  returnDay  DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @default(now()) @updatedAt
+  id           String    @id @default(uuid())
+  customer     Customer  @relation(fields: [customerId], references: [id])
+  customerId   String
+  movie        Movie     @relation(fields: [movieId], references: [id])
+  movieId      String
+  returnDay    DateTime
+  deliveryDate DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @default(now()) @updatedAt
 
 }
