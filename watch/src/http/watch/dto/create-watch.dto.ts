@@ -1,10 +1,13 @@
 import { IsString, IsNotEmpty, IsDateString } from 'class-validator';
 
-export class CreateRentDto {
+export class CreateWatchDto {
+    @IsNotEmpty()
+    @IsString()
+    viewerId: string
     @IsNotEmpty()
     @IsString()
     movieId: string
     @IsNotEmpty()
     @IsDateString()
-    returnDay: Date
+    availability: Date
 }

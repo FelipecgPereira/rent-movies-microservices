@@ -1,3 +1,4 @@
+import { MessagingModule } from './../messaging/messaging.module';
 import { RentService } from './rent/rent.service';
 import { RentController } from './rent/rent.controller';
 import { JwtStrategy } from './account/strategy/jwt.strategy';
@@ -16,7 +17,7 @@ import { JwtModule } from '@nestjs/jwt';
 
 
 @Module({
-  imports: [DatabaseModule,JwtModule.register({})],
+  imports: [DatabaseModule,MessagingModule,JwtModule.register({})],
   controllers: [AccountController, CustomerController, MoviesController,RentController],
   providers: [AccountService,CustomerService, MoviesService,JwtStrategy,RentService]
 })
